@@ -1,5 +1,8 @@
 function toCrypt(myPhrase){
-  
+  // console.log("sup");
+  var output = "aaa";
+  output = myPhrase.replace(" ", "");
+  return output;
 }
 
 
@@ -9,5 +12,6 @@ $(document).ready(function(){
     var input = $("input#myPhrase").val();
     var output = toCrypt(input);
     $("#result").text(output);
+    console.log("Passed");
   });
 });
