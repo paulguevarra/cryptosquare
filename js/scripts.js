@@ -15,6 +15,7 @@ function toCrypt(myPhrase){
   // console.log("sup");
   var output = "aaa";
   output = myPhrase.replace(/[\s\,\'\.\?\!]/g, '');
+  output = output.toLowerCase();
   return output;
 }
 
