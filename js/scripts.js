@@ -16,6 +16,22 @@ function toCrypt(myPhrase){
   var output = "aaa";
   output = myPhrase.replace(/[\s\,\'\.\?\!]/g, '');
   output = output.toLowerCase();
+  var length = output.length;
+  var num = Math.sqrt(length);
+  var round = Math.round(num);
+  var num1 = 0;
+  var num2 = 0;
+  if(num === round){
+  	num1 = round;
+    num2 = round;
+  }else if(num > round){
+  	num1 = round + 1;
+    num2 = round;
+  }else if(num < round){
+  	num1 = round;
+    num2 = round;
+  }
+  alert(num1 + "x" + num2);
   return output;
 }
 
