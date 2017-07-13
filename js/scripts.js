@@ -24,16 +24,31 @@ function toCrypt(myPhrase){
     alert("why am i here?");
   }
   for(var i=0; i < num2; i++){
-    for(var j=0; j < num2; j++){
-      if((i+ (j*num2)) === length){
+    for(var j=0; j <= num2; j++){
+      // alert(i + ", " + j);
+      // alert((i+ (j*num2)));
+      if((i+ (j*num2)) >= length){
+        // alert("breaking");
         break;
       }
-      output += myPhrase[i + (j*num2)];
-      alert(output);
+      output += newPhrase[i + (j*num2)];
+      // alert((i + (j*num2)));
     }
   }
-  alert(num1 + "x" + num2);
-  return output;
+
+  var output2 = "";
+  for(var i = 0; i < (length/5); i++){
+    output2 += output.slice((i*5), ((i*5)+5)) + " ";
+    // debugger;
+    // alert(output2);
+    if((i+1) === (length/5)){
+      if((length%5) !== 0){
+        var num3 = length - ((i+1)*5);
+        output2 += output.slice(((i+1)*5), (((i+1)*5) +num));
+      }
+    }
+  }
+  return output2;
 }
 
 //front end
