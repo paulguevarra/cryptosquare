@@ -1,22 +1,12 @@
 //back end
-// function removePunc(myPhrase){
-//   var length = myPhrase.length;
-//   var output = "";
-//   for(var i = 0; i < length; i++){
-//     if(myPhrase[i] === " " || myPhrase[i] === "'" || myPhrase[i] === "!" || myPhrase[i] === "," || myPhrase[i] === "."){
-//       output = myPhrase.split(0, i);
-//       myPhrase.split(i+1, )
-//     }
-//   }
-//   return myPhrase;
-// }
 
 function toCrypt(myPhrase){
   // console.log("sup");
-  var output = "aaa";
-  output = myPhrase.replace(/[\s\,\'\.\?\!]/g, '');
-  output = output.toLowerCase();
-  var length = output.length;
+  var output = "";
+  var newPhrase = "";
+  newPhrase = myPhrase.replace(/[\s\,\'\.\?\!]/g, '');
+  newPhrase = newPhrase.toLowerCase();
+  var length = newPhrase.length;
   var num = Math.sqrt(length);
   var round = Math.round(num);
   var num1 = 0;
@@ -30,6 +20,17 @@ function toCrypt(myPhrase){
   }else if(num < round){
   	num1 = round;
     num2 = round;
+  }else{
+    alert("why am i here?");
+  }
+  for(var i=0; i < num2; i++){
+    for(var j=0; j < num2; j++){
+      if((i+ (j*num2)) === length){
+        break;
+      }
+      output += myPhrase[i + (j*num2)];
+      alert(output);
+    }
   }
   alert(num1 + "x" + num2);
   return output;
